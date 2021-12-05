@@ -1,0 +1,177 @@
+npm install --save semantic-ui-react semantic-ui-css
+===================================================================
+npm init
+code .
+git init
+git add .
+git commit -m 'first commit'
+git push -f origin main
+git push -u origin master --force
+
+git push --set-upstream origin main
+ npm install --save express mysql body-parser
+
+git add .
+
+git commit -m "mengintall package express mysql dan body-parser"  
+git push origin
+
+touch server.js
+
+install plugin codevideo expressjs
+
+node server.js
+
+
+====================
+create-react-app hello-react
+
+git branch -avv
+git branch main 
+git checkout main (pindah branch)
+git remote rm main(hapus remote)
+
+
+git remote set-url origin https://github.com/putrapuices/tugas4eactjs.git (gunakan yang ini)
+git remote add origin git@github.com:YOUR-GIT/YOUR-REPO.git
+
+npm start (untuk react)
+=======================================
+git pull origin main (mengambil dr github dan digabungkan ke local)
+-----------------------
+git fetch origin main(mengambil dr github tp  tdk menggabungkan lgnsung k local)
+git log --onlie
+Bila ingin mengecek apa saja perbedaannya, coba gunakan perintah git diff.
+git diff master github/master
+Keterangan:
+master adalah cabang master di repository lokal.
+github/master adalah cabang master di repository remote.
+Lalu sekarang bagaimana cara kita menggabungkan commit dari repository remote dengan lokal?
+
+Gunakan perintah git merge.
+
+git merge master github/master
+Setelah itu coba ketik ls dan git log lagi�
+
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+git push --set-upstream origin main
+
+link https://www.hostinger.co.id/tutorial/tutorial-git-dasar-cara-menggunakan-git
+link https://gist.github.com/febritecno/1d845912abbc40417290161c12e55442
+
+=============================
+…or create a new repository on the command line
+echo "# java" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/putrapuices/java.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/putrapuices/java.git
+git branch -M main
+git push -u origin main
+==========================================
+
+…or create a new repository on the command line
+echo "# java" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:putrapuices/java.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin git@github.com:putrapuices/java.git
+git branch -M main
+git push -u origin main
+
+==================untuk error login resository-==============
+fatal: Not a valid object name: 'master'
+This error happens when trying to create a branch when there is no master branch.   
+
+Let’s take a look at an example:
+
+$ git init 
+Initialized empty Git repository in /Users/amir/gitdemo/.git/ 
+$ git branch feature-1 
+fatal: Not a valid object name: 'master'.
+A master branch is created after our first commit.  Let’s commit a file and check the branch list:
+
+$ touch test.txt
+$ git add test.txt 
+$ git commit -m "First commit" 
+[master (root-commit) dffc881] First commit  
+ 1 file changed, 0 insertions(+), 0 deletions(-)  
+ create mode 100644 test.txt 
+$ git branch 
+* master
+Since master has been created, we can now create a branch:
+
+$ git branch feature-1 
+$ git checkout feature-1
+Switched to branch 'feature-1'
+
+===================================================================
+untuk membuat import react compont
+import React, { Component } from "react";
+jika yang di atas ing dirubah seperti dbwah ini
+import React from "react";
+maka pada componentnya ditambahak
+class Header extends Component{
+    ,.......
+}
+    menjadi
+    class Header extends React.Component{
+    ,.......
+}
+
+untuk menginstall router
+npm install --save react-route-dom
+atau
+npm install -g npm 
+
+bersihkan cache dengan
+npm cache clean --force
+instal versi terbaru npm secara global sebagai admin:
+npm install -g npm@latest --force
+bersihkan cache dengan
+
+npm cache clean --force
+Coba instal komponen Anda sekali lagi.
+
+untuk memer baik 
+1- In Angular stopping ng sdan in React stopping npm start biasanya menyelesaikan masalah ini karena biasanya kesalahan ini terjadi jika server pengembangan menjalankan proyek karena mengunci beberapa file & kemudian npm tidak dapat memperbaruinya sehingga menimbulkan kesalahan ini
+
+2- Jika cara di atas tidak berhasil, coba tutup editor kode yang memiliki ruang kerja terbuka di dalamnya (mungkin itu mengunci beberapa file atau sesuatu)
+
+Jadi coba tutup editor kode & jalankan:
+
+npm install
+3 - Jika masih tidak berhasil, mungkin Anda dapat mencoba --forceopsi
+
+npm install --force
+ npm audit fix --force
+ =================================
+  ssh-keygen
+  eval $(ssh-agent)
+  ssh-add /d/SyarifChatting/windows (namdirektory)
+  git remote add origin git@github.com:putrapuices/hello-semantic-u
+i.git
+git init
+git add .
+git commit -m ""
+git push origin main
+
+kalau error silahkan login dlu
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+
+  atau lainnya
+  eval 'ssh-agent -s'
+  =======================================================
+  npm install -save react-materialize
+  npm install --save axios
