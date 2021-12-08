@@ -6,7 +6,7 @@ git init
 git add .
 git commit -m 'first commit'
 git push -f origin main
-git push -u origin master --force
+git push -u origin main --force
 
 git push --set-upstream origin main
  npm install --save express mysql body-parser
@@ -158,7 +158,7 @@ npm install --force
  =================================
   ssh-keygen
   eval $(ssh-agent)
-  ssh-add /d/SyarifChatting/windows (namdirektory)
+  ssh-add /d/SyarifChatting/windows (namdirektory E:\devsaurus\niomicreactjs)
   git remote add origin git@github.com:putrapuices/hello-semantic-u
 i.git
 git init
@@ -175,3 +175,8 @@ git config --global user.name "Your Name"
   =======================================================
   npm install -save react-materialize
   npm install --save axios
+
+  JSONPlaceholder Documentasi :https://jsonplaceholder.typicode.com/
+
+Axios Documentasi : https://github.com/axios/axios
+
