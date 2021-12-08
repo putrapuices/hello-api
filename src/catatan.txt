@@ -180,3 +180,22 @@ git config --global user.name "Your Name"
 
 Axios Documentasi : https://github.com/axios/axios
 
+npm install -g json-server
+npm install json-server --save-dev
+npm add json-server to update
+Create a db.json file with some data
+
+{
+  "posts": [
+    { "id": 1, "title": "json-server", "author": "typicode" }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 }
+  ],
+  "profile": { "name": "typicode" }
+}
+Start JSON Server
+
+json-server --watch db.json
+json-server --watch db.json --post 3004
+

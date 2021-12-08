@@ -15,9 +15,27 @@ class App extends Component {
     this.state = {
       dataApi: [],
     };
+    this.handleRemove = this.handleRemove.bind(this);
+  }
+
+  reloadData() {
+    http: axios.get("http://localhost:3000/posts").then((res) => {
+      // console.log(res);
+      // console.log(res.data);
+      this.setState({
+        dataApi: res.data,
+      });
+    });
+  }
+  handleRemove(e) {
+    console.log(e.target.value);
+    fetch(`http://localhost:3000/posts/${e.target.value}`, {
+      method: "DELETE",
+      // }).then((res) => console.log(res));
+    }).then((res) => this.reloadData());
   }
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/posts");
+    // fetch("https://jsonplaceholder.typicode.com/posts");
     // .then((response) => response.json())
     // .then((json) => console.log(json));
 
@@ -26,15 +44,18 @@ class App extends Component {
     // .then((res) => {
     //   this.setState({ dataApi: res });
     // });
-
+    //localhost:3000/posts
     //menggunkan axios
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
-      // console.log(res);
-      // console.log(res.data);
-      this.setState({
-        dataApi: res.data,
-      });
-    });
+    // axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
+    // http: axios.get("http://localhost:3000/posts").then((res) => {
+    //   // console.log(res);
+    //   // console.log(res.data);
+    //   this.setState({
+    //     dataApi: res.data,
+    //   });
+    // });
+
+    this.reloadData();
   }
 
   render() {
@@ -45,7 +66,9 @@ class App extends Component {
           return (
             <div key={index}>
               <p>{dat.title}</p>
-              <p>{dat.body}</p>
+              <button value={dat.id} onClick={this.handleRemove}>
+                Delete
+              </button>
             </div>
           );
         })}
