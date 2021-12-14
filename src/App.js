@@ -14,8 +14,15 @@ class App extends Component {
     super(props);
     this.state = {
       dataApi: [],
+      dataPost: {
+        id: 0,
+        title: "",
+        body: "",
+      },
     };
     this.handleRemove = this.handleRemove.bind(this);
+    this.inputChange = this.inputChange.bind(this);
+    // this.onSubmitForm = this.onSubmitForm.bind(this);
   }
 
   reloadData() {
@@ -34,6 +41,40 @@ class App extends Component {
       // }).then((res) => console.log(res));
     }).then((res) => this.reloadData());
   }
+
+  inputChange(e) {
+    // console.log(e.target.value);
+    //srit operator ES6 (...)
+    let newdataPost = { ...this.state.dataPost };
+    newdataPost["id"] = new Date().getTime();
+    newdataPost[e.target.name] = e.target.value;
+    this.setState(
+      {
+        // dataPost: e.target.value,
+        dataPost: newdataPost,
+      },
+      () => console.log(this.state.dataPost)
+    );
+  }
+  // kalau dbuat dengan arrowfunction tdkperlu kita bind functionnya
+  onSubmitForm = () => {
+    axios
+      .post(`http://localhost:3000/posts`, this.state.dataPost)
+      // .then((res) => this.reloadData);  //reloadData tdk halan
+      .then(() => {
+        this.reloadData();
+      });
+  };
+
+  // onSubmitForm() {
+  //   axios
+  //     .post(`http://localhost:3000/posts`, this.state.dataPost)
+  //     // .then((res) => this.reloadData);  //reloadData tdk halan
+  //     .then(() => {
+  //       this.reloadData();
+  //     });
+  // }
+
   componentDidMount() {
     // fetch("https://jsonplaceholder.typicode.com/posts");
     // .then((response) => response.json())
@@ -62,6 +103,21 @@ class App extends Component {
     return (
       <div>
         <p>Hello Api</p>
+        <input
+          type="text"
+          name="body"
+          placeholder="Masukkan Body"
+          onChange={this.inputChange}
+        />
+        <input
+          type="text"
+          name="title"
+          placeholder="Masukkan Title"
+          onChange={this.inputChange}
+        />
+        <button type="submit" onClick={this.onSubmitForm}>
+          Add Data
+        </button>
         {this.state.dataApi.map((dat, index) => {
           return (
             <div key={index}>
