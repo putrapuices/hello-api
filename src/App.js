@@ -34,6 +34,7 @@ class App extends Component {
       });
     });
   }
+
   handleRemove(e) {
     console.log(e.target.value);
     fetch(`http://localhost:3000/posts/${e.target.value}`, {
