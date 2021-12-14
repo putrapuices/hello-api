@@ -14,6 +14,7 @@ class App extends Component {
     super(props);
     this.state = {
       dataApi: [],
+      edit: false,
       dataPost: {
         id: 0,
         title: "",
@@ -47,7 +48,9 @@ class App extends Component {
     // console.log(e.target.value);
     //srit operator ES6 (...)
     let newdataPost = { ...this.state.dataPost };
-    newdataPost["id"] = new Date().getTime();
+    if (this.state.edit === false) {
+      newdataPost["id"] = new Date().getTime();
+    }
     newdataPost[e.target.name] = e.target.value;
     this.setState(
       {
@@ -59,12 +62,33 @@ class App extends Component {
   }
   // kalau dbuat dengan arrowfunction tdkperlu kita bind functionnya
   onSubmitForm = () => {
-    axios
-      .post(`http://localhost:3000/posts`, this.state.dataPost)
-      // .then((res) => this.reloadData);  //reloadData tdk halan
-      .then(() => {
-        this.reloadData();
-      });
+    if (this.state.edit === false) {
+      axios
+        .post(`http://localhost:3000/posts`, this.state.dataPost)
+        // .then((res) => this.reloadData);  //reloadData tdk halan
+        .then(() => {
+          this.reloadData();
+          this.clearData();
+        });
+    } else {
+      axios
+        .put(
+          `http://localhost:3000/posts/${this.state.dataPost.id}`,
+          this.state.dataPost
+        )
+        .then(() => {
+          this.reloadData();
+          this.clearData();
+        });
+    }
+  };
+
+  clearData = () => {
+    let newdataPost = { ...this.state.dataPost };
+    newdataPost["id"] = "";
+    newdataPost["body"] = "";
+    newdataPost["title"] = "";
+    this.setState({ dataPost: newdataPost });
   };
 
   // onSubmitForm() {
@@ -75,7 +99,14 @@ class App extends Component {
   //       this.reloadData();
   //     });
   // }
-
+  getDataId = (e) => {
+    axios
+      .get(`http://localhost:3000/posts/${e.target.value}`)
+      // .then((res) => console.log(res));
+      .then((res) => {
+        this.setState({ dataPost: res.data, edit: false });
+      });
+  };
   componentDidMount() {
     // fetch("https://jsonplaceholder.typicode.com/posts");
     // .then((response) => response.json())
@@ -107,17 +138,19 @@ class App extends Component {
         <input
           type="text"
           name="body"
+          value={this.state.dataPost.body}
           placeholder="Masukkan Body"
           onChange={this.inputChange}
         />
         <input
           type="text"
           name="title"
+          value={this.state.dataPost.title}
           placeholder="Masukkan Title"
           onChange={this.inputChange}
         />
         <button type="submit" onClick={this.onSubmitForm}>
-          Add Data
+          Save Data
         </button>
         {this.state.dataApi.map((dat, index) => {
           return (
@@ -125,6 +158,9 @@ class App extends Component {
               <p>{dat.title}</p>
               <button value={dat.id} onClick={this.handleRemove}>
                 Delete
+              </button>
+              <button value={dat.id} onClick={this.getDataId}>
+                Edit Data
               </button>
             </div>
           );
