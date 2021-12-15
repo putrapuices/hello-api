@@ -1,11 +1,14 @@
 {
   "posts": [
     {
+<<<<<<< HEAD
       "id": 3,
       "title": "edit jsonserver3rrrr",
       "body": "test edit"
     },
     {
+=======
+>>>>>>> ec80e7c (dari data local ya)
       "id": 5,
       "title": "json-server54",
       "body": "typicode"

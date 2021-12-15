@@ -172,6 +172,18 @@ git config --global user.name "Your Name"
 
   atau lainnya
   eval 'ssh-agent -s'
+
+My solution was found randomly on a Linux forum.
+Had the issue :
+I was running
+
+ssh-add "C:\sshKeys\Key"   
+Could not open a connection to your authentication agent.
+and the solution was to run it like:
+
+ssh-agent.exe ssh-add "C:\sshKeys\Key"   
+ssh-agent.exe ssh-add "D:\devsaurus\niomicreactjs\windows"
+
   =======================================================
   npm install -save react-materialize
   npm install --save axios
