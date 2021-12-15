@@ -184,6 +184,9 @@ and the solution was to run it like:
 ssh-agent.exe ssh-add "C:\sshKeys\Key"   
 ssh-agent.exe ssh-add "D:\devsaurus\niomicreactjs\windows"
 
+// cek status
+ssh -T GITHUB-USERNAME@github.com
+ssh -T git@github.com
   =======================================================
   npm install -save react-materialize
   npm install --save axios
