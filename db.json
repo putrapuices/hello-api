@@ -1,47 +1,14 @@
 {
   "posts": [
     {
-<<<<<<< HEAD
-      "id": 3,
-      "title": "edit jsonserver3rrrr",
-      "body": "test edit"
+      "id": 1639625976376,
+      "title": "input2edit",
+      "body": "input2"
     },
     {
-=======
->>>>>>> ec80e7c (dari data local ya)
-      "id": 5,
-      "title": "json-server54",
-      "body": "typicode"
-    },
-    {
-      "id": 1639499840192,
-      "title": "json-server444",
-      "body": "json-server4"
-    },
-    {
-      "id": 1639502217102,
-      "title": "erere",
-      "body": "eer"
-    },
-    {
-      "id": 1639502221540,
-      "title": "edit jsonserver3rrrr2",
-      "body": "test edit2"
-    },
-    {
-      "id": 1639502225777,
-      "title": "r3r3",
-      "body": "eerr"
-    },
-    {
-      "id": 1639502264193,
-      "title": "edit jso",
-      "body": "test edit22"
-    },
-    {
-      "id": 1639502268431,
-      "title": "eeeeeeeeeeee",
-      "body": "wee3"
+      "id": 1639625992980,
+      "title": "input3edit",
+      "body": "input3"
     }
   ],
   "comments": [],

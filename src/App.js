@@ -32,6 +32,7 @@ class App extends Component {
       // console.log(res.data);
       this.setState({
         dataApi: res.data,
+        edit:false
       });
     });
   }
@@ -104,7 +105,7 @@ class App extends Component {
       .get(`http://localhost:3000/posts/${e.target.value}`)
       // .then((res) => console.log(res));
       .then((res) => {
-        this.setState({ dataPost: res.data, edit: false });
+        this.setState({ dataPost: res.data, edit: true });
       });
   };
   componentDidMount() {
